@@ -110,4 +110,8 @@ return {
 			require "configs.bufferline"
 		end
 	},
+
+	{
+		"ThePrimeagen/vim-be-good"
+	}
 }

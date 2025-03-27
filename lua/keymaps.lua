@@ -12,6 +12,9 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
+map("n", "<C-u>", "<C-u>zz", opts)
+map("n", "<C-d>", "<C-d>zz", opts)
+
 -- Quick Accesses
 map({"n", "i"}, "<C-a>", "<Esc>gg0vG$", opts)
 map("n", "<leader>so", "<cmd>so<CR>", opts)
