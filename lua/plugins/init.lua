@@ -41,84 +41,113 @@ return {
 	},
 
 	-- Auto code completion.
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-cmdline",
-			"hrsh7th/cmp-nvim-lua",
-			"L3MON4D3/LuaSnip",
-			"saadparwaiz1/cmp_luasnip",
-			"rafamadriz/friendly-snippets"
-		},
-		config = function ()
-			require "configs.cmp"
-		end
-	},
+	-- {
+		-- 	"hrsh7th/nvim-cmp",
+		-- 	dependencies = {
+			-- 		"hrsh7th/cmp-nvim-lsp",
+			-- 		"hrsh7th/cmp-buffer",
+			-- 		"hrsh7th/cmp-path",
+			-- 		"hrsh7th/cmp-cmdline",
+			-- 		"hrsh7th/cmp-nvim-lua",
+			-- 		"L3MON4D3/LuaSnip",
+			-- 		"saadparwaiz1/cmp_luasnip",
+			-- 		"rafamadriz/friendly-snippets"
+			-- 	},
+			-- 	config = function ()
+				-- 		require "configs.cmp"
+				-- 	end
+				-- },
+				{
+					"saghen/blink.cmp",
+					dependencies = {
+						"rafamadriz/friendly-snippets"
+					},
+					version = "1.*",
+					---@module "blink.cmp"
+					---@type blink.cmp.Config
+					opts = {
+						keymap = {
+							preset = "default"
+						},
+						appearance = {
+							nerd_font_variant = "mono"
+						},
+						completion = {
+							documentation = {
+								auto_show = false
+							}
+						},
+						sources = {
+							default = { "lsp", "path", "snippets", "buffer" }
+						},
+						fuzzy = {
+							implementation = "prefer_rust_with_warning"
+						}
+					},
+					opts_extend = { "sources.default" }
+				},
 
-	-- Syntax highlighting
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		config = function ()
-			require "configs.treesitter"
-		end
-	},
+				-- Syntax highlighting
+				{
+					"nvim-treesitter/nvim-treesitter",
+					build = ":TSUpdate",
+					config = function ()
+						require "configs.treesitter"
+					end
+				},
 
-	-- Files fuzzy finder
-	{
-		'nvim-telescope/telescope.nvim', tag = '0.1.8',
-		dependencies = { 'nvim-lua/plenary.nvim' },
-		config = function ()
-			require "configs.telescope"
-		end
-	},
+				-- Files fuzzy finder
+				{
+					'nvim-telescope/telescope.nvim', tag = '0.1.8',
+					dependencies = { 'nvim-lua/plenary.nvim' },
+					config = function ()
+						require "configs.telescope"
+					end
+				},
 
-	-- File tree explorer
-	{
-		"nvim-tree/nvim-tree.lua",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons"
-		},
-		config = function ()
-			require "configs.nvim-tree"
-		end
-	},
+				-- File tree explorer
+				{
+					"nvim-tree/nvim-tree.lua",
+					lazy = false,
+					dependencies = {
+						"nvim-tree/nvim-web-devicons"
+					},
+					config = function ()
+						require "configs.nvim-tree"
+					end
+				},
 
-	-- Git controls
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require "configs.gitsigns"
-		end
-	},
+				-- Git controls
+				{
+					"lewis6991/gitsigns.nvim",
+					config = function()
+						require "configs.gitsigns"
+					end
+				},
 
-	-- Lazygit for full Git interface
-	{
-		"kdheepak/lazygit.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
+				-- Lazygit for full Git interface
+				{
+					"kdheepak/lazygit.nvim",
+					dependencies = { "nvim-lua/plenary.nvim" },
+				},
 
-	{
-		'akinsho/bufferline.nvim',
-		version = "*",
-		dependencies = 'nvim-tree/nvim-web-devicons',
-		config = function ()
-			require "configs.bufferline"
-		end
-	},
+				{
+					'akinsho/bufferline.nvim',
+					version = "*",
+					dependencies = 'nvim-tree/nvim-web-devicons',
+					config = function ()
+						require "configs.bufferline"
+					end
+				},
 
-	{
-		"ThePrimeagen/vim-be-good"
-	},
+				{
+					"ThePrimeagen/vim-be-good"
+				},
 
-	{
-		"folke/which-key.nvim",
-		config = function ()
-			require "configs.which-key"
-		end
-	}
-}
+				{
+					"folke/which-key.nvim",
+					config = function ()
+						require "configs.which-key"
+					end
+				}
+			}
