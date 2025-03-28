@@ -30,4 +30,5 @@ map("n", "<leader><C-q>", "<cmd>qa<CR>", opts)
 map("n", "<leader><C-Q>", "<cmd>qa!<CR>", opts)
 
 -- Files Navigation
-map("n", "<leader>pv", "<cmd>Ex<CR>", opts)
+local pOpts = vim.tbl_extend("force", opts, { desc = "View project files"})
+map("n", "<leader>pv", "<cmd>Ex<CR>", pOpts)

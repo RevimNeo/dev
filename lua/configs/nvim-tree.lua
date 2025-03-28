@@ -36,4 +36,4 @@ require("nvim-tree").setup({
 	on_attach = on_attach,
 })
 
-vim.keymap.set("n", "<leader>pt", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>pt", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true, desc = "Toggle file tree"})
