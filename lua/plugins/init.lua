@@ -57,97 +57,105 @@ return {
 				-- 		require "configs.cmp"
 				-- 	end
 				-- },
-				{
-					"saghen/blink.cmp",
-					dependencies = {
-						"rafamadriz/friendly-snippets"
-					},
-					version = "1.*",
-					---@module "blink.cmp"
-					---@type blink.cmp.Config
-					opts = {
-						keymap = {
-							preset = "default"
-						},
-						appearance = {
-							nerd_font_variant = "mono"
-						},
-						completion = {
-							documentation = {
-								auto_show = false
-							}
-						},
-						sources = {
-							default = { "lsp", "path", "snippets", "buffer" }
-						},
-						fuzzy = {
-							implementation = "prefer_rust_with_warning"
-						}
-					},
-					opts_extend = { "sources.default" }
-				},
 
-				-- Syntax highlighting
-				{
-					"nvim-treesitter/nvim-treesitter",
-					build = ":TSUpdate",
-					config = function ()
-						require "configs.treesitter"
-					end
-				},
-
-				-- Files fuzzy finder
-				{
-					'nvim-telescope/telescope.nvim', tag = '0.1.8',
-					dependencies = { 'nvim-lua/plenary.nvim' },
-					config = function ()
-						require "configs.telescope"
-					end
-				},
-
-				-- File tree explorer
-				{
-					"nvim-tree/nvim-tree.lua",
-					lazy = false,
-					dependencies = {
-						"nvim-tree/nvim-web-devicons"
-					},
-					config = function ()
-						require "configs.nvim-tree"
-					end
-				},
-
-				-- Git controls
-				{
-					"lewis6991/gitsigns.nvim",
-					config = function()
-						require "configs.gitsigns"
-					end
-				},
-
-				-- Lazygit for full Git interface
-				{
-					"kdheepak/lazygit.nvim",
-					dependencies = { "nvim-lua/plenary.nvim" },
-				},
-
-				{
-					'akinsho/bufferline.nvim',
-					version = "*",
-					dependencies = 'nvim-tree/nvim-web-devicons',
-					config = function ()
-						require "configs.bufferline"
-					end
-				},
-
-				{
-					"ThePrimeagen/vim-be-good"
-				},
-
-				{
-					"folke/which-key.nvim",
-					config = function ()
-						require "configs.which-key"
-					end
+	{
+		"saghen/blink.cmp",
+		dependencies = {
+			"rafamadriz/friendly-snippets"
+		},
+		version = "1.*",
+		---@module "blink.cmp"
+		---@type blink.cmp.Config
+		opts = {
+			keymap = {
+				preset = "default"
+			},
+			appearance = {
+				nerd_font_variant = "mono"
+			},
+			completion = {
+				documentation = {
+					auto_show = false
 				}
+			},
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer" }
+			},
+			fuzzy = {
+				implementation = "prefer_rust_with_warning"
 			}
+		},
+		opts_extend = { "sources.default" }
+	},
+
+	-- Syntax highlighting
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function ()
+			require "configs.treesitter"
+		end
+	},
+
+	-- Files fuzzy finder
+	{
+		'nvim-telescope/telescope.nvim', tag = '0.1.8',
+		dependencies = { 'nvim-lua/plenary.nvim' },
+		config = function ()
+			require "configs.telescope"
+		end
+	},
+
+	-- File tree explorer
+	{
+		"nvim-tree/nvim-tree.lua",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons"
+		},
+		config = function ()
+			require "configs.nvim-tree"
+		end
+	},
+
+	-- Git controls
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require "configs.gitsigns"
+		end
+	},
+
+	-- Lazygit for full Git interface
+	{
+		"kdheepak/lazygit.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+
+	{
+		'akinsho/bufferline.nvim',
+		version = "*",
+		dependencies = 'nvim-tree/nvim-web-devicons',
+		config = function ()
+			require "configs.bufferline"
+		end
+	},
+
+	{
+		"ThePrimeagen/vim-be-good"
+	},
+
+	{
+		"folke/which-key.nvim",
+		config = function ()
+			require "configs.which-key"
+		end
+	},
+
+	{
+		"tpope/vim-commentary",
+		config = function ()
+			require "configs.vim-commentary"
+		end
+	}
+}
