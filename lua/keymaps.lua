@@ -15,8 +15,12 @@ map("n", "<C-l>", "<C-w>l", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
 map("n", "<C-d>", "<C-d>zz", opts)
 
+-- Indenting
+map({"v", "n"}, "+", "><CR>")
+map({"v", "n"}, "-", "<<CR>")
+
 -- Quick Accesses
-map({"n", "i"}, "<C-a>", "<Esc>gg0vG$", opts)
+map({"i", "n"}, "<C-a>", "<Esc>ggVG", opts)
 map("n", "<leader>so", "<cmd>so<CR>", opts)
 
 -- Modes
